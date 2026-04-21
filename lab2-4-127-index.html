@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数字展销平台首页 - 春韵</title>
+    <link type="text/css" rel="stylesheet" href="css/lab2-4-127-index.css">
+</head>
+<body>
+    <!-- 1. 头部区域 (包含固定定位和浮动) -->
+    <div id="top">
+        <div class="logo">
+            <img src="logo.png" width="100" height="50">
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">图书分类</a></li>
+                <li><a href="#">新书推荐</a></li>
+                <li><a href="#">促销活动</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 2. 主体容器 (包含三栏浮动布局) -->
+    <div id="main">
+        <!-- 左侧栏 (相对定位) -->
+        <div class="left">
+            <h3>图书分类</h3>
+            <ul>
+                <li><a href="#">文学小说</a></li>
+                <li><a href="#">科技科普</a></li>
+                <li><a href="#">历史传记</a></li>
+                <li><a href="#">少儿读物</a></li>
+            </ul>
+        </div>
+
+        <!-- 中间栏 (核心内容区) -->
+        <div class="center">
+            <!-- 热门推荐 (浮动排列) -->
+            <div class="hot">
+                <h2>热门推荐</h2>
+                <!-- 父相子绝：父容器设相对，子元素设绝对用于悬停 -->
+                <div class="book-item">
+                    <!-- 图片：默认显示 -->
+                    <img src="book1.jpg" alt="图书封面" width="180" height="220">
+                    <div class="book-mask">
+                        <p>立即购买</p>
+                    </div>
+                </div>
+                <div class="book-item">
+                    <img src="book2.jpg" alt="图书封面" width="180" height="220">
+                    <div class="book-mask">
+                        <p>立即查看</p>
+                    </div>
+                </div>
+                <div class="book-item">
+                    <img src="book3.jpg" alt="图书封面" width="180" height="220">
+                </div>
+            </div>
+
+            <!-- 新书上市 -->
+            <div class="new-book">
+                <h2>新书上市</h2>
+                <table border="1" cellpadding="8" cellspacing="0">
+                    <tr>
+                        <th>书名</th>
+                        <th>作者</th>
+                        <th>定价</th>
+                    </tr>
+                    <tr>
+                        <td>活着</td>
+                        <td>余华</td>
+                        <td>¥59.00</td>
+                    </tr>
+                    <tr>
+                        <td>Python 编程：从入门到实践</td>
+                        <td>吴洪</td>
+                        <td>¥49.00</td>
+                    </tr>
+                    <tr>
+                        <td>苏东坡传</td>
+                        <td>林语堂</td>
+                        <td>¥59.00</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- 右侧栏 (固定定位) -->
+        <div class="right">
+            <img src="ad.jpg" alt="促销广告" width="160" height="500">
+        </div>
+    </div>
+    <div id="footer">
+        <p>© 2026 数字展销平台 - 春韵 版权所有</p>
+    </div>
+
+</body>
+</html>
