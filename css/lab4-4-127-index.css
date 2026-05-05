@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: 微软雅黑;
+    padding-top: 60px;
+}
+
+#top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(54, 146, 239);
+    z-index: 10000; /* 保证顶部不被轮播/登录层覆盖 */
+}
+
+.logo {
+    float: left;
+    margin-left: 20px;
+}
+
+.menu {
+    float: right;
+    margin-right: 30px;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    float: left;
+    margin-left: 20px;
+    line-height: 60px;
+}
+
+.menu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu a:hover {
+    color: rgb(255, 255, 5);
+}
+
+/* 登录按钮动画：背景渐变+缩放 */
+.login-btn label {
+    padding: 5px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease; /* 过渡动画 */
+    display: inline-block; /* 支持缩放 */
+}
+.login-btn label:hover {
+    background: linear-gradient(to right, #3692ef, #00c6ff); /* 渐变背景 */
+    transform: scale(1.1); /* 缩放1.1倍 */
+    box-shadow: 0 0 10px rgba(0,0,0,0.3); /* 阴影加深 */
+}
+
+/* 图标动画：购物车/搜索悬停旋转 */
+.icon-item {
+    transition: transform 0.5s ease; /* 旋转过渡 */
+    cursor: pointer;
+}
+.icon-item:hover {
+    transform: rotate(15deg); /* 顺时针旋转15度 */
+}
+
+#main {
+    width: 1000px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.left {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 550px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.left h3 {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.left ul {
+    list-style: none;
+}
+
+.left li {
+    height: 32px;
+    line-height: 32px;
+}
+
+.left a {
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.left a:hover {
+    color: blue;
+}
+
+.center {
+    float: left;
+    width: 600px;
+    margin-left: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* 轮播图核心样式 */
+.carousel {
+  width: 570px;   
+  height: 200px;  
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto 20px; 
+  display: block;
+}
+.carousel-inner {
+  width: 100%;
+  height: 600px;  /* 3×200px，必须等于所有轮播项高度总和 */
+  animation: carousel-slide 9s linear infinite; /* 核心动画 */
+}
+.carousel-item {
+  width: 100%;
+  height: 200px;  /* 和.carousel高度完全一致 */
+}
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* 从下向上轮播关键帧 */
+@keyframes carousel-slide {
+  0% { transform: translateY(0); }        /* 显示第1张 */
+  30% { transform: translateY(0); }       /* 停留3秒 */
+  33% { transform: translateY(-200px); } /* 滑到第2张 */
+  63% { transform: translateY(-200px); } /* 停留3秒 */
+  66% { transform: translateY(-400px); } /* 滑到第3张 */
+  97% { transform: translateY(-400px); } /* 停留3秒 */
+  100% { transform: translateY(0); }     /* 回到初始位置 */
+}
+
+.hot {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* 热门图书动效：悬停右移+阴影+放大 */
+.book-item {
+    float: left;
+    width: 180px;
+    height: 220px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 0.3s ease; /* 过渡动画 */
+}
+.book-item:hover {
+    transform: translateX(5px) scale(1.05); /* 右移5px + 放大1.05倍 */
+    box-shadow: 0 0 15px rgba(0,0,0,0.4); /* 阴影加深 */
+}
+
+.book-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    line-height: 220px;
+    display: none;
+    cursor: pointer;
+}
+
+.book-item:hover .book-mask {
+    display: block;
+}
+
+.new-book table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.new-book th,
+.new-book td {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+}
+
+.right {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 160px;
+}
+
+#footer {
+    clear: both;
+    background-color: #06C;
+    color: white;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 20px;
+}
+
+/* 登录弹窗样式 */
+.login-mask {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px 50px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+.input-item {
+  margin: 15px 0;
+  font-size: 16px;
+}
+.input-item input {
+  padding: 5px;
+  margin-left: 10px;
+  width: 200px;
+}
+.close-btn {
+  margin-top: 20px;
+  color: #3692ef;
+  cursor: pointer;
+}
+.close-btn:hover {
+  color: red;
+}
+.menu label {
+  color: white;
+  cursor: pointer;
+  margin-left: 20px;
+  line-height: 60px;
+}
+#check:checked ~ .login-mask {
+  display: block;
+}
